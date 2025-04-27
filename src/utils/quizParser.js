@@ -4,7 +4,6 @@ export function parseQuizFile(content) {
   const lines = content.split('\n')
   console.log('Split into lines:', lines)
   let currentQuiz = null
-  let inChoices = false
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i].trim()
@@ -26,12 +25,8 @@ export function parseQuizFile(content) {
         points: 0,
         firstAttempt: null
       }
-      inChoices = false
       console.log('Created new quiz object:', currentQuiz)
-    } else if (line === '<choices>') {
-      console.log('Found choices marker')
-      inChoices = true
-    } else if (inChoices && line.startsWith('-')) {
+    } else if (line.startsWith('-')) {
       console.log('Found option line:', line)
       const option = line.substring(1).trim()
       if (line.startsWith('-*')) {
@@ -43,7 +38,7 @@ export function parseQuizFile(content) {
         currentQuiz.options.push(option)
       }
       console.log('Current quiz options:', currentQuiz.options)
-    } else if (line && !line.startsWith('-') && currentQuiz && !inChoices) {
+    } else if (line && !line.startsWith('-') && currentQuiz) {
       if (!currentQuiz.question) {
         console.log('Found question:', line)
         currentQuiz.question = line
