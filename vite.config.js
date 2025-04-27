@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 
 export default defineConfig({
+  base: '/LingQuiz/',
   plugins: [vue()],
   server: {
     host: true, // This allows access from other devices on the network
