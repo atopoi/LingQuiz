@@ -1,5 +1,12 @@
 <template>
   <div class="quiz-container">
+    <div v-if="showBirthday" class="birthday-overlay">
+      <div class="birthday-content">
+        <h2>Alles Gute zum Geburtstag, Roya! 🎂</h2>
+        <p class="birthday-message">Viel Glück und Erfolg im neuen Lebensjahr! 🍾✨</p>
+        <div class="fireworks"></div>
+      </div>
+    </div>
     <div v-if="!quizStarted" class="start-screen">
       <h2>So you think you are a linguist?</h2>
       <button @click="startQuiz" class="start-button">Start Quiz</button>
@@ -41,6 +48,11 @@
         <span class="score-box"><span class="score-label">SCORE</span> <span class="score-number">{{ score }}</span><span class="divider">/</span><span class="score-number">{{ completedQuizzes }}</span></span>
         <span class="score-box"><span class="score-label">POINTS</span> <span class="score-number">{{ points }}</span><span class="divider">/</span><span class="score-number">{{ completedQuizzes * 2 }}</span></span>
       </div>
+      <div class="feedback-message" :class="feedbackClass">
+        <p v-if="pointRate > 0.9" class="excellent">You are a real linguist! 🍾🎉</p>
+        <p v-else-if="pointRate >= 0.75" class="good">Not bad! 👍</p>
+        <p v-else class="needs-improvement">Sorry, you need a linguistics course! Ask Houman :) 📚</p>
+      </div>
       <button @click="restartQuiz" class="restart-button">Try Again</button>
     </div>
     <div v-if="debug" class="debug-panel">
@@ -73,7 +85,8 @@ export default {
       attempts: 0,
       completedQuizzes: 0,
       debug: false,
-      debugInfo: ''
+      debugInfo: '',
+      showBirthday: false
     }
   },
   mounted() {
@@ -83,6 +96,12 @@ export default {
     window.removeEventListener('keydown', this.handleKeyPress)
   },
   async created() {
+    if (this.isRoya) {
+      this.showBirthday = true
+      setTimeout(() => {
+        this.showBirthday = false
+      }, 10000)
+    }
     try {
       this.debugInfo = 'Attempting to load quiz data...\n'
       const response = await fetch('/data/Quiz.txt')
@@ -194,6 +213,19 @@ export default {
         lastAttempt: new Date().toISOString()
       }
       localStorage.setItem(`quiz_user_${this.userName}`, JSON.stringify(userData))
+    }
+  },
+  computed: {
+    pointRate() {
+      return this.completedQuizzes > 0 ? this.points / (this.completedQuizzes * 2) : 0
+    },
+    feedbackClass() {
+      if (this.pointRate > 0.9) return 'excellent'
+      if (this.pointRate >= 0.75) return 'good'
+      return 'needs-improvement'
+    },
+    isRoya() {
+      return this.userName.toLowerCase() === 'roya' || this.userName.toLowerCase() === 'r'
     }
   }
 }
@@ -578,5 +610,208 @@ h3 span {
 
 .results-screen h2 {
   margin-bottom: 1.5rem;
+}
+
+.feedback-message {
+  margin: 2rem 0;
+  padding: 1rem;
+  border-radius: 8px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.feedback-message p {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+}
+
+.excellent {
+  background: linear-gradient(135deg, #ffd700, #ffa500);
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+  animation: celebrate 1s ease-in-out;
+}
+
+.good {
+  background: linear-gradient(135deg, #4caf50, #45a049);
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.needs-improvement {
+  background: linear-gradient(135deg, #f44336, #e53935);
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(244, 67, 54, 0.3);
+}
+
+@keyframes celebrate {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.birthday-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: growOverlay 10s ease-out forwards;
+}
+
+.birthday-content {
+  text-align: center;
+  color: #2c3e50;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+  animation: growContent 10s ease-out forwards;
+  transform-origin: center;
+}
+
+.birthday-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.birthday-message {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.fireworks {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  animation: showFireworks 10s ease-out forwards;
+}
+
+@keyframes growOverlay {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes growContent {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  20% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  30% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes showFireworks {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fireworks::before,
+.fireworks::after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  box-shadow: 
+    -120px -218px #ffd700,
+    248px -16px #ffa500,
+    190px 16px #ffd700,
+    -113px -310px #ffa500,
+    -109px -311px #ffd700,
+    -50px -313px #ffa500,
+    226px -31px #ffd700,
+    180px -74px #ffa500,
+    -12px -338px #ffd700,
+    220px -160px #ffa500,
+    -69px -283px #ffd700,
+    -111px -309px #ffa500,
+    155px -237px #ffd700,
+    -152px -380px #ffa500,
+    -50px -313px #ffd700,
+    -95px -175px #ffa500,
+    -88px 10px #ffd700,
+    112px -123px #ffa500,
+    69px -196px #ffd700,
+    168px -259px #ffa500,
+    -121px -32px #ffd700,
+    -60px -120px #ffa500,
+    -27px -164px #ffd700,
+    -83px -218px #ffa500;
+  animation: fireworks 1s ease-in-out infinite;
+}
+
+.fireworks::after {
+  animation-delay: 0.5s;
+}
+
+@keyframes fireworks {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
 }
 </style> 
