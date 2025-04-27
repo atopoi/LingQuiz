@@ -100,7 +100,7 @@ export default {
       this.showBirthday = true
       setTimeout(() => {
         this.showBirthday = false
-      }, 10000)
+      }, 5000)
     }
     try {
       this.debugInfo = 'Attempting to load quiz data...\n'
@@ -225,7 +225,8 @@ export default {
       return 'needs-improvement'
     },
     isRoya() {
-      return this.userName.toLowerCase() === 'roya' || this.userName.toLowerCase() === 'r'
+      const specialUsers = ['roya', 'r', 'farceur']
+      return specialUsers.includes(this.userName.toLowerCase())
     }
   }
 }
@@ -628,10 +629,10 @@ h3 span {
 }
 
 .excellent {
-  background: linear-gradient(135deg, #ffd700, #ffa500);
+  background: linear-gradient(135deg, #4caf50, #45a049);
   color: #fff;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
   animation: celebrate 1s ease-in-out;
 }
 
@@ -693,72 +694,25 @@ h3 span {
 .birthday-content h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #2c3e50;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .birthday-message {
   font-size: 1.4rem;
   margin-bottom: 1rem;
-  color: #2c3e50;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .fireworks {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   pointer-events: none;
-  z-index: 1;
-  opacity: 0;
-  animation: showFireworks 10s ease-out forwards;
-}
-
-@keyframes growOverlay {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes growContent {
-  0% {
-    transform: scale(0.1);
-    opacity: 0;
-  }
-  20% {
-    transform: scale(1.2);
-    opacity: 1;
-  }
-  30% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes showFireworks {
-  0% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 0;
-  }
-  30% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
+  z-index: -1;
 }
 
 .fireworks::before,
