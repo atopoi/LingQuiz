@@ -1,39 +1,33 @@
-{
-  "questions": [
-    {
-      "id": 1,
-      "question": "What is the study of language sounds called?",
-      "options": ["Phonology", "Morphology", "Syntax", "Semantics"],
-      "correctAnswer": 0,
-      "explanation": "Phonology is the study of the sound system of a language."
-    },
-    {
-      "id": 2,
-      "question": "Which of these is not a type of morpheme?",
-      "options": ["Free", "Bound", "Root", "Vowel"],
-      "correctAnswer": 3,
-      "explanation": "Vowel is a type of sound, not a morpheme."
-    },
-    {
-      "id": 3,
-      "question": "What is the term for the smallest unit of meaning in a language?",
-      "options": ["Phoneme", "Morpheme", "Lexeme", "Grapheme"],
-      "correctAnswer": 1,
-      "explanation": "A morpheme is the smallest unit of meaning in a language."
-    },
-    {
-      "id": 4,
-      "question": "Which of these is an example of a bound morpheme?",
-      "options": ["Book", "Run", "-ing", "Happy"],
-      "correctAnswer": 2,
-      "explanation": "-ing is a bound morpheme as it cannot stand alone."
-    },
-    {
-      "id": 5,
-      "question": "What is the study of word formation called?",
-      "options": ["Phonology", "Morphology", "Syntax", "Semantics"],
-      "correctAnswer": 1,
-      "explanation": "Morphology is the study of word formation."
-    }
-  ]
-} 
+<quiz>
+Combien de cas y a-t-il en géorgien?
+-5
+-*7
+-8
+-9
+
+<quiz>
+Quelle langue n’est pas dravidienne?
+-Brahui
+-Malayalam
+-*Marathi
+-Télougou
+
+<quiz>
+À quelle famille linguistique appartiennent le cri, l’ojibwa et l’abénaki?
+-*Algonquienne
+-Athabascane
+-Inuite
+-Iroquoienne
+
+<quiz>
+Lequel des personnes suivantes n’est pas connue pour sa contribution à l’étude des langues indo-européennes?
+-August Schleicher
+-*Franz Boas
+-Jakob Grimm
+-Rasmus Rask
+
+
+
+
+
+

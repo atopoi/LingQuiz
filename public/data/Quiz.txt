@@ -1,42 +1,31 @@
 <quiz>
 Combien de cas y a-t-il en géorgien?
-<choices>
 -5
 -*7
 -8
 -9
-</choices>
-</quiz>
 
 <quiz>
 Quelle langue n’est pas dravidienne?
-<choices>
 -Brahui
 -Malayalam
 -*Marathi
 -Télougou
-</choices>
-</quiz>
 
 <quiz>
 À quelle famille linguistique appartiennent le cri, l’ojibwa et l’abénaki?
-<choices>
 -*Algonquienne
 -Athabascane
 -Inuite
 -Iroquoienne
-</choices>
-</quiz>
 
 <quiz>
 Lequel des personnes suivantes n’est pas connue pour sa contribution à l’étude des langues indo-européennes?
-<choices>
 -August Schleicher
 -*Franz Boas
 -Jakob Grimm
 -Rasmus Rask
-</choices>
-</quiz>
+
 
 
 

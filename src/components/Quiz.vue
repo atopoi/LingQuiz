@@ -37,15 +37,21 @@
     </div>
     <div v-else class="results-screen">
       <h2>Quiz Complete!</h2>
-      <p>Your score: {{ score }}/{{ completedQuizzes }}</p>
-      <p>Total points: {{ points }}/{{ completedQuizzes * 2 }}</p>
+      <div class="score-display">
+        <span class="score-box"><span class="score-label">SCORE</span> <span class="score-number">{{ score }}</span><span class="divider">/</span><span class="score-number">{{ completedQuizzes }}</span></span>
+        <span class="score-box"><span class="score-label">POINTS</span> <span class="score-number">{{ points }}</span><span class="divider">/</span><span class="score-number">{{ completedQuizzes * 2 }}</span></span>
+      </div>
       <button @click="restartQuiz" class="restart-button">Try Again</button>
+    </div>
+    <div v-if="debug" class="debug-panel">
+      <h3>Debug Info</h3>
+      <pre>{{ debugInfo }}</pre>
     </div>
   </div>
 </template>
 
 <script>
-import quizData from '/data/quizData.json'
+import { parseQuizFile } from '../utils/quizParser'
 
 export default {
   name: 'Quiz',
@@ -57,30 +63,67 @@ export default {
   },
   data() {
     return {
-      questions: quizData.questions.map(q => ({ ...q })),
+      questions: [],
       currentQuestion: 0,
       selectedAnswer: null,
       showFeedback: false,
       score: 0,
       points: 0,
       quizStarted: false,
-      totalAttempts: 0,
       attempts: 0,
-      completedQuizzes: 0
+      completedQuizzes: 0,
+      debug: false,
+      debugInfo: ''
     }
   },
-  created() {
-    // Load user data from localStorage
-    const userData = localStorage.getItem(`quiz_user_${this.userName}`)
-    if (userData) {
-      const { score, totalAttempts, points, completedQuizzes } = JSON.parse(userData)
-      this.score = score
-      this.totalAttempts = totalAttempts
-      this.points = points
-      this.completedQuizzes = completedQuizzes
+  mounted() {
+    window.addEventListener('keydown', this.handleKeyPress)
+  },
+  beforeUnmount() {
+    window.removeEventListener('keydown', this.handleKeyPress)
+  },
+  async created() {
+    try {
+      this.debugInfo = 'Attempting to load quiz data...\n'
+      const response = await fetch('/data/Quiz.txt')
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`)
+      }
+      const content = await response.text()
+      this.debugInfo += `Raw quiz content:\n${content}\n`
+      if (!content) {
+        throw new Error('Empty quiz content')
+      }
+      const quizData = parseQuizFile(content)
+      this.debugInfo += `Parsed quiz data:\n${JSON.stringify(quizData, null, 2)}\n`
+      if (!quizData.questions || quizData.questions.length === 0) {
+        throw new Error('No questions parsed from quiz data')
+      }
+      this.questions = quizData.questions.map(q => ({ ...q }))
+      this.debugInfo += `Final questions array:\n${JSON.stringify(this.questions, null, 2)}\n`
+
+      // Load user data from localStorage
+      const userData = localStorage.getItem(`quiz_user_${this.userName}`)
+      if (userData) {
+        const { score, totalAttempts, points, completedQuizzes } = JSON.parse(userData)
+        this.score = score
+        this.totalAttempts = totalAttempts
+        this.points = points
+        this.completedQuizzes = completedQuizzes
+      }
+    } catch (error) {
+      this.debugInfo += `Error loading quiz data: ${error.message}\n`
+      console.error('Error loading quiz data:', error)
+      // Fallback to empty questions array
+      this.questions = []
     }
   },
   methods: {
+    handleKeyPress(event) {
+      if (event.key.toLowerCase() === 'd') {
+        this.debug = !this.debug
+      }
+    },
     startQuiz() {
       this.quizStarted = true
     },
@@ -495,5 +538,45 @@ h3 span {
 .restart-button:active {
   transform: translateY(0);
   box-shadow: 0 1px 2px rgba(33, 150, 243, 0.2);
+}
+
+.debug-panel {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.debug-panel h3 {
+  margin-top: 0;
+  color: #666;
+  font-size: 1rem;
+}
+
+.debug-panel pre {
+  margin: 0;
+  color: #333;
+}
+
+.score-display {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.results-screen {
+  text-align: center;
+  padding: 1.5rem 0.8rem;
+}
+
+.results-screen h2 {
+  margin-bottom: 1.5rem;
 }
 </style> 
