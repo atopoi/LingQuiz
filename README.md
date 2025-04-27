@@ -1,6 +1,6 @@
 # LingQuiz
 
-A language learning quiz application that helps users test the knowledge of linguistics
+A language learning quiz application that helps users test their knowledge of linguistics
 
 ## Features
 
