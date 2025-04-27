@@ -104,7 +104,7 @@ export default {
     }
     try {
       this.debugInfo = 'Attempting to load quiz data...\n'
-      const response = await fetch('/data/Quiz.txt')
+      const response = await fetch('/LingQuiz/data/Quiz.txt')
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
       }
