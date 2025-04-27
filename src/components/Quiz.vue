@@ -100,7 +100,7 @@ export default {
       this.showBirthday = true
       setTimeout(() => {
         this.showBirthday = false
-      }, 10000)
+      }, 3000)
     }
     try {
       this.debugInfo = 'Attempting to load quiz data...\n'
@@ -669,25 +669,24 @@ h3 span {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.98);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  animation: growOverlay 10s ease-out forwards;
+  animation: fadeIn 0.3s ease-out;
 }
 
 .birthday-content {
   text-align: center;
   color: #2c3e50;
   padding: 2rem;
-  background: white;
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 2;
-  animation: growContent 10s ease-out forwards;
-  transform-origin: center;
+  animation: fadeIn 0.3s ease-out;
 }
 
 .birthday-content h2 {
@@ -712,51 +711,15 @@ h3 span {
   bottom: 0;
   pointer-events: none;
   z-index: 1;
-  opacity: 0;
-  animation: showFireworks 10s ease-out forwards;
+  opacity: 0.2;
+  animation: fadeIn 0.3s ease-out;
 }
 
-@keyframes growOverlay {
-  0% {
+@keyframes fadeIn {
+  from {
     opacity: 0;
   }
-  10% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes growContent {
-  0% {
-    transform: scale(0.1);
-    opacity: 0;
-  }
-  20% {
-    transform: scale(1.2);
-    opacity: 1;
-  }
-  30% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes showFireworks {
-  0% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 0;
-  }
-  30% {
-    opacity: 1;
-  }
-  100% {
+  to {
     opacity: 1;
   }
 }
@@ -807,7 +770,7 @@ h3 span {
   }
   50% {
     transform: scale(1);
-    opacity: 1;
+    opacity: 0.3;
   }
   100% {
     transform: scale(0);
