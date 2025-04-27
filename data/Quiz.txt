@@ -1,5 +1,6 @@
 <quiz>
 Combien de cas y a-t-il en géorgien?
+<choices>
 -5
 -*7
 -8
@@ -7,6 +8,7 @@ Combien de cas y a-t-il en géorgien?
 
 <quiz>
 Quelle langue n’est pas dravidienne?
+<choices>
 -Brahui
 -Malayalam
 -*Marathi
@@ -14,20 +16,210 @@ Quelle langue n’est pas dravidienne?
 
 <quiz>
 À quelle famille linguistique appartiennent le cri, l’ojibwa et l’abénaki?
+<choices>
 -*Algonquienne
 -Athabascane
 -Inuite
 -Iroquoienne
 
+
 <quiz>
-Lequel des personnes suivantes n’est pas connue pour sa contribution à l’étude des langues indo-européennes?
+Laquelle des personnes suivantes n’est pas connue pour sa contribution à l’étude des langues indo-européennes?
+<choices>
 -August Schleicher
 -*Franz Boas
 -Jakob Grimm
 -Rasmus Rask
 
 
+<quiz>
+Quel élément n'est pas caractéristique des langues nigéro-congolaises?
+-Syllabes ouvertes
+-Système de classes nominales
+-*Système de genre
+-Système tonal
 
 
+<quiz>
+Quel mot veut dire "femme" en kanyen'kéha?
+-raksá:'a
+-yeksá:'a
+-rón:kwe
+-*yakón:kwe
+
+<quiz>
+Que veut dire "Skennen’kó:wa ken?" "Henh, Skennen’kó:wa. Nok ní:se?"
+-"Bonjour, comment vas-tu?" "Ça va bien, merci"
+-*"Est-ce que ça va?" "Oui, ça va bien, et toi?"
+- "C'est une belle journée" "Oui, en effet, n'est-ce pas?"
+- "Est-ce ta mère?" "Oui, c'est ma mère. Et où est la tienne?"
+
+<quiz>
+Dans quel pays il y a moins de 500 langues parlées?
+-*Chine
+-Indonésie
+-Nigéria
+-Papouasie Nouvelle-Guinée
+
+<quiz>
+Quel pays a le plus de langues officielles (37)?
+-Afrique du Sud
+-*Bolivie
+-Inde
+-Indonésie
+
+<quiz>
+Quelle langue parmi les suivantes n'est pas une langue officielle de la Bolivie?
+-Aymara
+-Guarani
+-*Kaingang
+-Quechua
+
+<quiz>
+Quelles sont les trois langues les plus parlées au monde?
+-Anglais, espagnol, français
+-*Anglais, hindi, mandarin
+-Espagnol, hindi, mandarin
+-Anglais, espagnol, mandarin
+
+<quiz>
+Quelle langue ne fait pas partie des 10 langues les plus parlées au monde?
+-Bengali
+-Portugais
+-Russe
+-*Ourdou
+
+<quiz>
+Combien de langues sont considérées comme "stables" en 2025?
+-Environ 500
+-Environ 1500
+-Environ 2400
+-*Environ 3500
+
+<quiz>
+Combien de langues sont considérées comme "menacées" en 2025?
+-2588
+-*3193
+-4204
+-4721
+
+<quiz>
+Laquelle parmi les suivantes n'est pas une langue tonale?
+-Najavo
+-Thaï
+-*Khmer
+-Yoruba
+
+<quiz>
+Le najavo est parlé dans 3 états américain. Lequel n'en fait pas partie?
+-Arizona
+-*Nevada
+-Nouveau Mexique
+-Utah
+
+<quiz>
+Quelle langue parmi les suivantes n'est pas une langue isolante?
+-*Japonais
+-Tibétain
+-Thaï
+-Vietnamien
+
+<quiz>
+À quelle famille linguistique appartient la langue malgache?
+-Afro-asiatique
+-*Austronésienne
+-Khoïsane
+-Nigéro-congolaise
+
+<quiz>
+La loi de Grimm explique l'évolution des consonnes du proto-indo-européen au germanique. Quelle transformation n'en fait pas partie?
+-p vers f
+-*s vers h
+-t vers s
+-b vers p
+
+<quiz>
+Lequel parmi ces mots n'a pas la même origine que les autres?
+-genu
+-*hiza
+-janu
+-knee
+
+<quiz>
+Lequel des éléments suivants n'est pas caractéristique de la langue japonaise?
+-L'ordre des mots est SOV
+-Les noms n'ont ni de genre ni de nombre
+-*Il y a de nombreux temps de verbes
+-Système pour exprimer la politesse
+
+<quiz>
+Combien de lettres contient l'API (2019)?
+-68
+-87
+-*107
+-123
+
+<quiz>
+Laquelle de ces voyelles n'est pas antérieure?
+-ɛ
+-*ɘ
+-i
+-ø
+
+<quiz>
+Lesquelles de ces voyelles ne fait pas partie de voyelles non arrondies?
+-ɑ
+-ɘ
+-i
+-*œ
+
+<quiz>
+Laquelle des langues suivante n'est pas une langue à clics?
+-Nama (Langue khoïsan)
+-Taa (langue khoïsan)
+-*Lingala (langue bantoue)
+-Zulu (langue bantoue)
+
+<quiz>
+Laquelle des langues suivantes ne fait pas partie de la famille austronésienne?
+-Hawaïen
+-Javanais
+-Tagalog
+-*Tupi
+
+<quiz>
+Dans quelle langue il y a des traces écrites qui datent de 2900 av. J-C.?
+-Akkadien
+-Égyptien ancien
+-Hittite
+-*Sumérien
+
+<quiz>
+Lesquelles parmi les langues suivantes sont les deux les plus anciennes encore utilisées aujourd'hui?
+-Arabe et Hébreu
+-Lituanien et Russe
+-Persan et Grec
+-*Tamoul et Sanskrit
+
+<quiz>
+Laquelle parmi les langues suivantes utilise la conjugaison verbale pour indiquer le temps?
+-*Atikamekw 
+-Malais
+-Thaï
+-Vietmanien
+
+<quiz>
+À quelle famille linguistique appartient la langue ouïgour?
+-*Altaïque
+-Austro-asiatique
+-Ouralienne
+-Sino-tibétaine
+
+<quiz>
+Quelle langue parmi les suivantes n'appartient pas à la famille ouralienne?
+-Finnois
+-Komi
+-Nenet
+-*Yakoute
 
 
