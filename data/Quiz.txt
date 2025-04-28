@@ -44,7 +44,7 @@ Quel mot veut dire "femme" en kanyen'kéha?
 -yeksá:'a
 -rón:kwe
 -*yakón:kwe
-=En kanyen'kéha (mohawk), "yakón:kwe" signifie "femme", littéralement "elle qui porte la vie".
+=En kanyen'kéha (mohawk), "yakón:kwe" signifie "femme".
 
 <quiz>
 Que veut dire "Skennen'kó:wa ken?" "Henh, Skennen'kó:wa. Nok ní:se?"
@@ -68,7 +68,7 @@ Quel pays a le plus de langues officielles (37)?
 -*Bolivie
 -Inde
 -Indonésie
-=La Bolivie reconnaît 37 langues officielles, dont l'espagnol, le quechua, l'aymara et le guarani.
+=La Bolivie a 37 langues officielles. L’Inde en compte 24 et l’Afrique du Sud 12 et l’Indonésie une seule.
 
 <quiz>
 Quelle langue parmi les suivantes n'est pas une langue officielle de la Bolivie?
@@ -84,7 +84,7 @@ Quelles sont les trois langues les plus parlées au monde?
 -*Anglais, hindi, mandarin
 -Espagnol, hindi, mandarin
 -Anglais, espagnol, mandarin
-=Le mandarin, l'hindi et l'anglais sont les trois langues les plus parlées au monde en nombre de locuteurs natifs.
+=Le mandarin, l'hindi et l'anglais sont les trois langues les plus parlées au monde selon l’Ethnologue (2025).
 
 <quiz>
 Quelle langue ne fait pas partie des 10 langues les plus parlées au monde?
@@ -92,7 +92,7 @@ Quelle langue ne fait pas partie des 10 langues les plus parlées au monde?
 -Portugais
 -Russe
 -*Ourdou
-=L'ourdou est la 20ème langue la plus parlée au monde, tandis que les autres font partie du top 10.
+=L'ourdou est la 11e  langue la plus parlée au monde, selon l’Ethnologue (2025).
 
 <quiz>
 Combien de langues sont considérées comme "stables" en 2025?
@@ -100,7 +100,7 @@ Combien de langues sont considérées comme "stables" en 2025?
 -Environ 1500
 -Environ 2400
 -*Environ 3500
-=Environ 3500 langues sont considérées comme "stables" selon les critères de l'UNESCO.
+=Selon le site Ethnologue (2025), il y a 3481 langues stables au monde.
 
 <quiz>
 Combien de langues sont considérées comme "menacées" en 2025?
@@ -108,7 +108,7 @@ Combien de langues sont considérées comme "menacées" en 2025?
 -*3193
 -4204
 -4721
-=3193 langues sont considérées comme menacées d'extinction selon l'UNESCO.
+=3193 langues sont considérées comme menacées d'extinction selon le site Ethnologue (2025).
 
 <quiz>
 Laquelle parmi les suivantes n'est pas une langue tonale?
@@ -140,15 +140,15 @@ Quelle langue parmi les suivantes n'est pas une langue isolante?
 -*Austronésienne
 -Khoïsane
 -Nigéro-congolaise
-=Le malgache est une langue austronésienne, apportée à Madagascar par des migrants d'Asie du Sud-Est.
+=Le malgache est l’une des environ 1200 langues austronésiennes.
 
 <quiz>
 La loi de Grimm explique l'évolution des consonnes du proto-indo-européen au germanique. Quelle transformation n'en fait pas partie?
 -p vers f
 -*s vers h
--t vers s
+-d vers t
 -b vers p
-=La transformation de s vers h n'est pas incluse dans la première loi de Grimm, qui concerne principalement les occlusives.
+=La Loi de Grimm concerne la spirantisation (les occlusives sourdes deviennent des fricatives sourdes comme dans p vers f), le dévoisement (les occlusives sonores deviennent des occlusives sourdes comme dans b vers p et d vers t) ainsi que la déaspiration (les occlusives sonores aspirées deviennent des occlusives sonores simples)
 
 <quiz>
 Lequel parmi ces mots n'a pas la même origine que les autres?
