@@ -19,15 +19,6 @@ Quelle langue n’est pas dravidienne?
 -Inuite
 -Iroquoienne
 
-
-<quiz>
-Laquelle des personnes suivantes n’est pas connue pour sa contribution à l’étude des langues indo-européennes?
--August Schleicher
--*Franz Boas
--Jakob Grimm
--Rasmus Rask
-
-
 <quiz>
 Quel élément n'est pas caractéristique des langues nigéro-congolaises?
 -Syllabes ouvertes
@@ -35,6 +26,12 @@ Quel élément n'est pas caractéristique des langues nigéro-congolaises?
 -*Système de genre
 -Système tonal
 
+<quiz>
+Laquelle des personnes suivantes n’est pas connue pour sa contribution à l’étude des langues indo-européennes?
+-August Schleicher
+-*Franz Boas
+-Jakob Grimm
+-Rasmus Rask
 
 <quiz>
 Quel mot veut dire "femme" en kanyen'kéha?
