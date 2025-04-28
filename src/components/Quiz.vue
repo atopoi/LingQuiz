@@ -86,7 +86,8 @@ export default {
       completedQuizzes: 0,
       debug: false,
       debugInfo: '',
-      showBirthday: false
+      showBirthday: false,
+      totalAttempts: 0
     }
   },
   mounted() {
@@ -121,15 +122,16 @@ export default {
       this.questions = quizData.questions.map(q => ({ ...q }))
       this.debugInfo += `Final questions array:\n${JSON.stringify(this.questions, null, 2)}\n`
 
-      // Load user data from localStorage
-      const userData = localStorage.getItem(`quiz_user_${this.userName}`)
-      if (userData) {
-        const { score, totalAttempts, points, completedQuizzes } = JSON.parse(userData)
-        this.score = score
-        this.totalAttempts = totalAttempts
-        this.points = points
-        this.completedQuizzes = completedQuizzes
-      }
+      // Reset all scores and points
+      this.score = 0
+      this.points = 0
+      this.completedQuizzes = 0
+      this.totalAttempts = 0
+      this.questions.forEach(q => {
+        q.completed = false
+        q.points = 0
+        q.firstAttempt = null
+      })
     } catch (error) {
       this.debugInfo += `Error loading quiz data: ${error.message}\n`
       console.error('Error loading quiz data:', error)
@@ -196,6 +198,7 @@ export default {
       this.attempts = 0
       this.quizStarted = false
       this.completedQuizzes = 0
+      this.totalAttempts = 0
       // Reset question states
       this.questions.forEach(q => {
         q.completed = false
