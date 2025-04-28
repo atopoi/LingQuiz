@@ -105,51 +105,7 @@ export default {
         this.showBirthday = false
       }, 3000)
     }
-    try {
-      this.debugInfo = 'Attempting to load quiz data...\n'
-      const response = await fetch('/LingQuiz/data/Quiz.txt', { cache: 'no-store' })
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`)
-      }
-      const content = await response.text()
-      this.debugInfo += `Raw quiz content:\n${content}\n`
-      if (!content) {
-        throw new Error('Empty quiz content')
-      }
-      const quizData = parseQuizFile(content)
-      this.debugInfo += `Parsed quiz data:\n${JSON.stringify(quizData, null, 2)}\n`
-      if (!quizData.quizzes || quizData.quizzes.length === 0) {
-        throw new Error('No quizzes parsed from quiz data')
-      }
-      // Shuffle options for each quiz
-      this.quizzes = quizData.quizzes.map(q => {
-        const shuffledOptions = this.shuffleArray([...q.options])
-        const correctAnswerIndex = shuffledOptions.indexOf(q.correctAnswer)
-        return {
-          ...q,
-          options: shuffledOptions,
-          correctAnswer: correctAnswerIndex
-        }
-      })
-      this.currentQuiz = this.quizzes[this.currentQuizIndex]
-      this.debugInfo += `Final quizzes array:\n${JSON.stringify(this.quizzes, null, 2)}\n`
-
-      // Reset all scores and points
-      this.score = 0
-      this.points = 0
-      this.completedQuizzes = 0
-      this.totalAttempts = 0
-      this.quizzes.forEach(q => {
-        q.completed = false
-        q.points = 0
-        q.firstAttempt = null
-      })
-    } catch (error) {
-      this.debugInfo += `Error loading quiz data: ${error.message}\n`
-      console.error('Error loading quiz data:', error)
-      // Fallback to empty quizzes array
-      this.quizzes = []
-    }
+    await this.initializeQuiz()
   },
   methods: {
     shuffleArray(array) {
@@ -165,6 +121,53 @@ export default {
     handleKeyPress(event) {
       if (event.key.toLowerCase() === 'd') {
         this.debug = !this.debug
+      }
+    },
+    async initializeQuiz() {
+      try {
+        this.debugInfo = 'Attempting to load quiz data...\n'
+        const response = await fetch('/LingQuiz/data/Quiz.txt', { cache: 'no-store' })
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`)
+        }
+        const content = await response.text()
+        this.debugInfo += `Raw quiz content:\n${content}\n`
+        if (!content) {
+          throw new Error('Empty quiz content')
+        }
+        const quizData = parseQuizFile(content)
+        this.debugInfo += `Parsed quiz data:\n${JSON.stringify(quizData, null, 2)}\n`
+        if (!quizData.quizzes || quizData.quizzes.length === 0) {
+          throw new Error('No quizzes parsed from quiz data')
+        }
+        // Shuffle options for each quiz
+        this.quizzes = quizData.quizzes.map(q => {
+          const shuffledOptions = this.shuffleArray([...q.options])
+          const correctAnswerIndex = shuffledOptions.indexOf(q.correctAnswer)
+          return {
+            ...q,
+            options: shuffledOptions,
+            correctAnswer: correctAnswerIndex
+          }
+        })
+        this.currentQuiz = this.quizzes[this.currentQuizIndex]
+        this.debugInfo += `Final quizzes array:\n${JSON.stringify(this.quizzes, null, 2)}\n`
+
+        // Reset all scores and points
+        this.score = 0
+        this.points = 0
+        this.completedQuizzes = 0
+        this.totalAttempts = 0
+        this.quizzes.forEach(q => {
+          q.completed = false
+          q.points = 0
+          q.firstAttempt = null
+        })
+      } catch (error) {
+        this.debugInfo += `Error loading quiz data: ${error.message}\n`
+        console.error('Error loading quiz data:', error)
+        // Fallback to empty quizzes array
+        this.quizzes = []
       }
     },
     startQuiz() {
@@ -214,7 +217,6 @@ export default {
     },
     resetQuiz() {
       this.currentQuizIndex = 0
-      this.currentQuiz = this.quizzes[this.currentQuizIndex]
       this.selectedAnswer = null
       this.showFeedback = false
       this.score = 0
@@ -234,6 +236,7 @@ export default {
         q.options = shuffledOptions
         q.correctAnswer = correctAnswerIndex
       })
+      this.currentQuiz = this.quizzes[this.currentQuizIndex]
       this.saveUserData()
     },
     saveUserData() {
