@@ -14,13 +14,17 @@ LingQuiz is a single-page Vue.js application that presents a linguistics quiz wi
   - Points display (earned/total possible)
   - Question text
   - Multiple choice options
-  - Feedback section
+  - Feedback section with explanations
   - Next and Reset buttons
 - Results screen with:
   - Final score
   - Points earned
   - Performance feedback message
   - Try Again button
+- Debug panel (toggle with 'Z' key) showing:
+  - Current quiz state
+  - Current quiz details
+  - All quizzes data
 
 ### 2. Quiz Mechanics
 - Two attempts per question
@@ -31,6 +35,8 @@ LingQuiz is a single-page Vue.js application that presents a linguistics quiz wi
 - Random option shuffling for each question
 - Immediate feedback after each attempt
 - Explanation displayed after question completion
+- Persistent quiz state management
+- Proper option shuffling and correct answer tracking
 
 ### 3. Data Management
 - Quiz data stored in external text file (Quiz.txt)
@@ -48,6 +54,7 @@ LingQuiz is a single-page Vue.js application that presents a linguistics quiz wi
 - User progress saved in localStorage
 - Score and points tracking
 - Attempt counting
+- Original quiz data preservation for reset functionality
 
 ### 4. Styling Requirements
 - Modern, arcade-style UI
@@ -61,6 +68,7 @@ LingQuiz is a single-page Vue.js application that presents a linguistics quiz wi
 - Font: Bangers for user name
 - Proper spacing and padding
 - Mobile-friendly layout
+- Debug panel with dark theme
 
 ### 5. Technical Requirements
 - Vue.js 3.4+
@@ -70,14 +78,18 @@ LingQuiz is a single-page Vue.js application that presents a linguistics quiz wi
 - Local storage for user data
 - Responsive design
 - Error handling for data loading
+- Debug mode (press 'Z' key)
+- Proper state management and data flow
 
 ### 6. User Experience
 - Clear feedback messages
 - Smooth transitions
 - Intuitive navigation
 - Persistent user data
-- Debug mode (press 'd' key)
+- Debug mode for development
 - Birthday message for specific user
+- Explanations for learning
+- Proper reset functionality
 
 ### 7. Performance Requirements
 - Fast loading times
@@ -85,12 +97,16 @@ LingQuiz is a single-page Vue.js application that presents a linguistics quiz wi
 - Efficient data handling
 - Proper error handling
 - Mobile optimization
+- Optimized state management
+- Efficient option shuffling
 
 ### 8. Deployment
 - GitHub Pages hosting
 - Automatic deployment workflow
 - Base URL configuration
 - Build optimization
+- Version tagging
+- Regular updates
 
 ## File Structure
 ```
@@ -121,6 +137,8 @@ LingQuiz/
 2. Testing on multiple devices
 3. Build for production
 4. Deploy to GitHub Pages
+5. Version tagging
+6. Regular updates
 
 ## Future Enhancements
 - Additional quiz categories
@@ -128,4 +146,6 @@ LingQuiz/
 - Sound effects
 - Animations
 - Multi-language support
-- User accounts 
+- User accounts
+- Enhanced debug features
+- Performance optimizations 
