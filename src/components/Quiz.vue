@@ -56,9 +56,30 @@
       </div>
       <button @click="restartQuiz" class="restart-button">Try Again</button>
     </div>
-    <div v-if="debug" class="debug-panel">
+    <div v-if="showDebug" class="debug-panel">
       <h3>Debug Info</h3>
-      <pre>{{ debugInfo }}</pre>
+      <div class="debug-section">
+        <h4>Current Quiz State</h4>
+        <pre>{{ JSON.stringify({
+          currentQuizIndex,
+          selectedAnswer,
+          showFeedback,
+          score,
+          points,
+          attempts,
+          quizStarted,
+          completedQuizzes,
+          totalAttempts
+        }, null, 2) }}</pre>
+      </div>
+      <div class="debug-section">
+        <h4>Current Quiz</h4>
+        <pre>{{ JSON.stringify(currentQuiz, null, 2) }}</pre>
+      </div>
+      <div class="debug-section">
+        <h4>All Quizzes</h4>
+        <pre>{{ JSON.stringify(quizzes, null, 2) }}</pre>
+      </div>
     </div>
   </div>
 </template>
@@ -77,6 +98,7 @@ export default {
   data() {
     return {
       quizzes: [],
+      quizData: null,
       currentQuizIndex: 0,
       currentQuiz: null,
       selectedAnswer: null,
@@ -89,7 +111,8 @@ export default {
       debug: false,
       debugInfo: '',
       showBirthday: false,
-      totalAttempts: 0
+      totalAttempts: 0,
+      showDebug: false
     }
   },
   mounted() {
@@ -122,6 +145,24 @@ export default {
       if (event.key.toLowerCase() === 'd') {
         this.debug = !this.debug
       }
+      if (event.key.toLowerCase() === 'z') {
+        this.showDebug = !this.showDebug
+      }
+    },
+    setupQuizzes(quizData) {
+      this.quizzes = quizData.quizzes.map(q => {
+        const shuffledOptions = this.shuffleArray([...q.options])
+        const correctAnswerIndex = shuffledOptions.indexOf(q.correctAnswer)
+        return {
+          ...q,
+          options: shuffledOptions,
+          correctAnswer: correctAnswerIndex,
+          completed: false,
+          points: 0,
+          firstAttempt: null
+        }
+      })
+      this.currentQuiz = this.quizzes[this.currentQuizIndex]
     },
     async initializeQuiz() {
       try {
@@ -135,38 +176,22 @@ export default {
         if (!content) {
           throw new Error('Empty quiz content')
         }
-        const quizData = parseQuizFile(content)
-        this.debugInfo += `Parsed quiz data:\n${JSON.stringify(quizData, null, 2)}\n`
-        if (!quizData.quizzes || quizData.quizzes.length === 0) {
+        this.quizData = parseQuizFile(content)
+        this.debugInfo += `Parsed quiz data:\n${JSON.stringify(this.quizData, null, 2)}\n`
+        if (!this.quizData.quizzes || this.quizData.quizzes.length === 0) {
           throw new Error('No quizzes parsed from quiz data')
         }
-        // Shuffle options for each quiz
-        this.quizzes = quizData.quizzes.map(q => {
-          const shuffledOptions = this.shuffleArray([...q.options])
-          const correctAnswerIndex = shuffledOptions.indexOf(q.correctAnswer)
-          return {
-            ...q,
-            options: shuffledOptions,
-            correctAnswer: correctAnswerIndex
-          }
-        })
-        this.currentQuiz = this.quizzes[this.currentQuizIndex]
+        
+        this.setupQuizzes(this.quizData)
         this.debugInfo += `Final quizzes array:\n${JSON.stringify(this.quizzes, null, 2)}\n`
 
-        // Reset all scores and points
         this.score = 0
         this.points = 0
         this.completedQuizzes = 0
         this.totalAttempts = 0
-        this.quizzes.forEach(q => {
-          q.completed = false
-          q.points = 0
-          q.firstAttempt = null
-        })
       } catch (error) {
         this.debugInfo += `Error loading quiz data: ${error.message}\n`
         console.error('Error loading quiz data:', error)
-        // Fallback to empty quizzes array
         this.quizzes = []
       }
     },
@@ -184,7 +209,6 @@ export default {
       }
       
       if (this.isCorrectAnswer(index)) {
-        // Award points based on attempt number
         if (this.attempts === 1) {
           this.points += 2
           this.currentQuiz.points = 2
@@ -202,7 +226,6 @@ export default {
         this.showFeedback = true
       }
       
-      // Save user data to localStorage
       this.saveUserData()
     },
     nextQuiz() {
@@ -225,18 +248,11 @@ export default {
       this.quizStarted = false
       this.completedQuizzes = 0
       this.totalAttempts = 0
-      // Reset quiz states and shuffle options
-      this.quizzes.forEach(q => {
-        q.completed = false
-        q.points = 0
-        q.firstAttempt = null
-        // Shuffle options again
-        const shuffledOptions = this.shuffleArray([...q.options])
-        const correctAnswerIndex = shuffledOptions.indexOf(q.correctAnswer)
-        q.options = shuffledOptions
-        q.correctAnswer = correctAnswerIndex
-      })
-      this.currentQuiz = this.quizzes[this.currentQuizIndex]
+
+      if (this.quizData) {
+        this.setupQuizzes(this.quizData)
+      }
+      
       this.saveUserData()
     },
     saveUserData() {
@@ -601,27 +617,38 @@ h3 span {
 }
 
 .debug-panel {
-  margin-top: 1rem;
-  padding: 1rem;
-  background: #f8f9fa;
-  border: 1px solid #e0e0e0;
-  border-radius: 6px;
-  font-family: monospace;
-  font-size: 0.9rem;
-  white-space: pre-wrap;
-  max-height: 300px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 400px;
+  max-height: 80vh;
   overflow-y: auto;
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  padding: 1rem;
+  font-family: monospace;
+  font-size: 12px;
+  z-index: 1000;
+  border-top-left-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.debug-panel h3 {
-  margin-top: 0;
-  color: #666;
-  font-size: 1rem;
+.debug-section {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
 }
 
-.debug-panel pre {
+.debug-section h4 {
+  margin: 0 0 0.5rem 0;
+  color: #4CAF50;
+}
+
+.debug-section pre {
   margin: 0;
-  color: #333;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 .score-display {
