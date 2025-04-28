@@ -11,31 +11,31 @@
       <h2>So you think you are a linguist?</h2>
       <button @click="startQuiz" class="start-button">Start Quiz</button>
     </div>
-    <div v-else-if="currentQuestion < questions.length" class="question-screen">
-      <h3><span>{{ userName.toUpperCase() }}</span> <span class="score-box"><span class="score-number">{{ currentQuestion + 1 }}</span><span class="divider">/</span><span class="score-number">{{ questions.length }}</span></span> <span class="score-box"><span class="score-label">SCORE</span> <span class="score-number">{{ score }}</span><span class="divider">/</span><span class="score-number">{{ completedQuizzes }}</span></span> <span class="score-box"><span class="score-label">POINTS</span> <span class="score-number">{{ points }}</span><span class="divider">/</span><span class="score-number">{{ completedQuizzes * 2 }}</span></span></h3>
-      <p class="question-text">{{ questions[currentQuestion].question }}</p>
+    <div v-else-if="currentQuestionIndex < questions.length" class="question-screen">
+      <h3><span>{{ userName.toUpperCase() }}</span> <span class="score-box"><span class="score-number">{{ currentQuestionIndex + 1 }}</span><span class="divider">/</span><span class="score-number">{{ questions.length }}</span></span> <span class="score-box"><span class="score-label">SCORE</span> <span class="score-number">{{ score }}</span><span class="divider">/</span><span class="score-number">{{ completedQuizzes }}</span></span> <span class="score-box"><span class="score-label">POINTS</span> <span class="score-number">{{ points }}</span><span class="divider">/</span><span class="score-number">{{ completedQuizzes * 2 }}</span></span></h3>
+      <p class="question-text">{{ currentQuestion.question }}</p>
       <div class="options">
         <button
-          v-for="(option, index) in questions[currentQuestion].options"
+          v-for="(option, index) in currentQuestion.options"
           :key="index"
           @click="selectAnswer(index)"
           :class="{
             'option': true,
             'selected': selectedAnswer === index,
-            'correct': showFeedback && index === questions[currentQuestion].correctAnswer,
-            'incorrect': showFeedback && selectedAnswer === index && index !== questions[currentQuestion].correctAnswer,
-            'first-attempt': questions[currentQuestion].firstAttempt === index && index !== questions[currentQuestion].correctAnswer,
-            'second-attempt': attempts === 2 && selectedAnswer === index && index !== questions[currentQuestion].correctAnswer
+            'correct': showFeedback && index === currentQuestion.correctAnswer,
+            'incorrect': showFeedback && selectedAnswer === index && index !== currentQuestion.correctAnswer,
+            'first-attempt': currentQuestion.firstAttempt === index && index !== currentQuestion.correctAnswer,
+            'second-attempt': attempts === 2 && selectedAnswer === index && index !== currentQuestion.correctAnswer
           }"
-          :disabled="showFeedback || questions[currentQuestion].completed"
+          :disabled="showFeedback || currentQuestion.completed"
         >
           {{ option }}
         </button>
       </div>
       <div v-if="showFeedback" class="feedback">
-        <p v-if="selectedAnswer === questions[currentQuestion].correctAnswer" class="success-message">Bravo!</p>
+        <p v-if="selectedAnswer === currentQuestion.correctAnswer" class="success-message">Bravo!</p>
         <p v-else-if="attempts === 1" class="try-again-message">Try again!</p>
-        <p v-else class="explanation">{{ questions[currentQuestion].explanation }}</p>
+        <p v-else class="explanation">{{ currentQuestion.explanation }}</p>
         <div class="button-group">
           <button @click="resetQuiz" class="reset-button">Reset Quiz</button>
           <button @click="nextQuestion" class="next-button">Next</button>
@@ -76,7 +76,8 @@ export default {
   data() {
     return {
       questions: [],
-      currentQuestion: 0,
+      currentQuestionIndex: 0,
+      currentQuestion: null,
       selectedAnswer: null,
       showFeedback: false,
       score: 0,
@@ -120,6 +121,7 @@ export default {
         throw new Error('No questions parsed from quiz data')
       }
       this.questions = quizData.questions.map(q => ({ ...q }))
+      this.currentQuestion = this.questions[this.currentQuestionIndex]
       this.debugInfo += `Final questions array:\n${JSON.stringify(this.questions, null, 2)}\n`
 
       // Reset all scores and points
@@ -155,24 +157,24 @@ export default {
       this.attempts++
       
       if (this.attempts === 1) {
-        this.questions[this.currentQuestion].firstAttempt = index
+        this.currentQuestion.firstAttempt = index
       }
       
-      if (index === this.questions[this.currentQuestion].correctAnswer) {
+      if (index === this.currentQuestion.correctAnswer) {
         // Award points based on attempt number
         if (this.attempts === 1) {
           this.points += 2
-          this.questions[this.currentQuestion].points = 2
+          this.currentQuestion.points = 2
         } else if (this.attempts === 2) {
           this.points += 1
-          this.questions[this.currentQuestion].points = 1
+          this.currentQuestion.points = 1
         }
         this.score++
-        this.questions[this.currentQuestion].completed = true
+        this.currentQuestion.completed = true
         this.completedQuizzes++
         this.showFeedback = true
       } else if (this.attempts >= 2) {
-        this.questions[this.currentQuestion].completed = true
+        this.currentQuestion.completed = true
         this.completedQuizzes++
         this.showFeedback = true
       }
@@ -181,7 +183,8 @@ export default {
       this.saveUserData()
     },
     nextQuestion() {
-      this.currentQuestion++
+      this.currentQuestionIndex++
+      this.currentQuestion = this.questions[this.currentQuestionIndex]
       this.selectedAnswer = null
       this.showFeedback = false
       this.attempts = 0
@@ -190,7 +193,8 @@ export default {
       this.resetQuiz()
     },
     resetQuiz() {
-      this.currentQuestion = 0
+      this.currentQuestionIndex = 0
+      this.currentQuestion = this.questions[this.currentQuestionIndex]
       this.selectedAnswer = null
       this.showFeedback = false
       this.score = 0
