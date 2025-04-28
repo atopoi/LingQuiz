@@ -4,20 +4,23 @@ Combien de cas y a-t-il en géorgien?
 -*7
 -8
 -9
+=Le géorgien possède 7 cas grammaticaux : nominatif, ergatif, datif, génitif, instrumental, adverbial et vocatif.
 
 <quiz>
-Quelle langue n’est pas dravidienne?
+Quelle langue n'est pas dravidienne?
 -Brahui
 -Malayalam
 -*Marathi
 -Télougou
+=Le marathi est une langue indo-aryenne, tandis que les autres options sont des langues dravidiennes.
 
 <quiz>
-À quelle famille linguistique appartiennent le cri, l’ojibwa et l’abénaki?
+À quelle famille linguistique appartiennent le cri, l'ojibwa et l'abénaki?
 -*Algonquienne
 -Athabascane
 -Inuite
 -Iroquoienne
+=Le cri, l'ojibwa et l'abénaki font partie de la famille des langues algonquiennes, parlées principalement en Amérique du Nord.
 
 <quiz>
 Quel élément n'est pas caractéristique des langues nigéro-congolaises?
@@ -25,13 +28,15 @@ Quel élément n'est pas caractéristique des langues nigéro-congolaises?
 -Système de classes nominales
 -*Système de genre
 -Système tonal
+=Les langues nigéro-congolaises utilisent un système de classes nominales plutôt qu'un système de genre grammatical.
 
 <quiz>
-Laquelle des personnes suivantes n’est pas connue pour sa contribution à l’étude des langues indo-européennes?
+Laquelle des personnes suivantes n'est pas connue pour sa contribution à l'étude des langues indo-européennes?
 -August Schleicher
 -*Franz Boas
 -Jakob Grimm
 -Rasmus Rask
+=Franz Boas est connu pour ses travaux en anthropologie et linguistique amérindienne, pas pour l'étude des langues indo-européennes.
 
 <quiz>
 Quel mot veut dire "femme" en kanyen'kéha?
@@ -39,13 +44,15 @@ Quel mot veut dire "femme" en kanyen'kéha?
 -yeksá:'a
 -rón:kwe
 -*yakón:kwe
+=En kanyen'kéha (mohawk), "yakón:kwe" signifie "femme", littéralement "elle qui porte la vie".
 
 <quiz>
-Que veut dire "Skennen’kó:wa ken?" "Henh, Skennen’kó:wa. Nok ní:se?"
+Que veut dire "Skennen'kó:wa ken?" "Henh, Skennen'kó:wa. Nok ní:se?"
 -"Bonjour, comment vas-tu?" "Ça va bien, merci"
 -*"Est-ce que ça va?" "Oui, ça va bien, et toi?"
 - "C'est une belle journée" "Oui, en effet, n'est-ce pas?"
 - "Est-ce ta mère?" "Oui, c'est ma mère. Et où est la tienne?"
+="Skennen'kó:wa" est une salutation mohawk qui signifie littéralement "la paix est avec toi".
 
 <quiz>
 Dans quel pays il y a moins de 500 langues parlées?
@@ -53,6 +60,7 @@ Dans quel pays il y a moins de 500 langues parlées?
 -Indonésie
 -Nigéria
 -Papouasie Nouvelle-Guinée
+=La Chine compte environ 300 langues, tandis que les autres pays en ont plus de 500.
 
 <quiz>
 Quel pays a le plus de langues officielles (37)?
@@ -60,6 +68,7 @@ Quel pays a le plus de langues officielles (37)?
 -*Bolivie
 -Inde
 -Indonésie
+=La Bolivie reconnaît 37 langues officielles, dont l'espagnol, le quechua, l'aymara et le guarani.
 
 <quiz>
 Quelle langue parmi les suivantes n'est pas une langue officielle de la Bolivie?
@@ -67,6 +76,7 @@ Quelle langue parmi les suivantes n'est pas une langue officielle de la Bolivie?
 -Guarani
 -*Kaingang
 -Quechua
+=Le kaingang est une langue parlée au Brésil, tandis que les autres sont des langues officielles de la Bolivie.
 
 <quiz>
 Quelles sont les trois langues les plus parlées au monde?
@@ -74,6 +84,7 @@ Quelles sont les trois langues les plus parlées au monde?
 -*Anglais, hindi, mandarin
 -Espagnol, hindi, mandarin
 -Anglais, espagnol, mandarin
+=Le mandarin, l'hindi et l'anglais sont les trois langues les plus parlées au monde en nombre de locuteurs natifs.
 
 <quiz>
 Quelle langue ne fait pas partie des 10 langues les plus parlées au monde?
@@ -81,6 +92,7 @@ Quelle langue ne fait pas partie des 10 langues les plus parlées au monde?
 -Portugais
 -Russe
 -*Ourdou
+=L'ourdou est la 20ème langue la plus parlée au monde, tandis que les autres font partie du top 10.
 
 <quiz>
 Combien de langues sont considérées comme "stables" en 2025?
@@ -88,6 +100,7 @@ Combien de langues sont considérées comme "stables" en 2025?
 -Environ 1500
 -Environ 2400
 -*Environ 3500
+=Environ 3500 langues sont considérées comme "stables" selon les critères de l'UNESCO.
 
 <quiz>
 Combien de langues sont considérées comme "menacées" en 2025?
@@ -95,6 +108,7 @@ Combien de langues sont considérées comme "menacées" en 2025?
 -*3193
 -4204
 -4721
+=3193 langues sont considérées comme menacées d'extinction selon l'UNESCO.
 
 <quiz>
 Laquelle parmi les suivantes n'est pas une langue tonale?
@@ -102,6 +116,7 @@ Laquelle parmi les suivantes n'est pas une langue tonale?
 -Thaï
 -*Khmer
 -Yoruba
+=Le khmer est une langue non tonale, tandis que les autres utilisent des tons pour distinguer les mots.
 
 <quiz>
 Le najavo est parlé dans 3 états américain. Lequel n'en fait pas partie?
@@ -109,6 +124,7 @@ Le najavo est parlé dans 3 états américain. Lequel n'en fait pas partie?
 -*Nevada
 -Nouveau Mexique
 -Utah
+=Le navajo est parlé en Arizona, au Nouveau-Mexique et en Utah, mais pas au Nevada.
 
 <quiz>
 Quelle langue parmi les suivantes n'est pas une langue isolante?
@@ -116,6 +132,7 @@ Quelle langue parmi les suivantes n'est pas une langue isolante?
 -Tibétain
 -Thaï
 -Vietnamien
+=Le japonais utilise des particules et des suffixes, ce qui le rend moins isolant que les autres langues mentionnées.
 
 <quiz>
 À quelle famille linguistique appartient la langue malgache?
@@ -123,6 +140,7 @@ Quelle langue parmi les suivantes n'est pas une langue isolante?
 -*Austronésienne
 -Khoïsane
 -Nigéro-congolaise
+=Le malgache est une langue austronésienne, apportée à Madagascar par des migrants d'Asie du Sud-Est.
 
 <quiz>
 La loi de Grimm explique l'évolution des consonnes du proto-indo-européen au germanique. Quelle transformation n'en fait pas partie?
@@ -130,6 +148,7 @@ La loi de Grimm explique l'évolution des consonnes du proto-indo-européen au g
 -*s vers h
 -t vers s
 -b vers p
+=La transformation de s vers h n'est pas incluse dans la première loi de Grimm, qui concerne principalement les occlusives.
 
 <quiz>
 Lequel parmi ces mots n'a pas la même origine que les autres?
@@ -137,6 +156,7 @@ Lequel parmi ces mots n'a pas la même origine que les autres?
 -*hiza
 -janu
 -knee
+="Hiza" est le mot japonais pour "genou", tandis que les autres sont des mots indo-européens apparentés.
 
 <quiz>
 Lequel des éléments suivants n'est pas caractéristique de la langue japonaise?
@@ -144,6 +164,7 @@ Lequel des éléments suivants n'est pas caractéristique de la langue japonaise
 -Les noms n'ont ni de genre ni de nombre
 -*Il y a de nombreux temps de verbes
 -Système pour exprimer la politesse
+=Le japonais a relativement peu de temps verbaux, mais utilise des aspects et des modes pour exprimer le temps.
 
 <quiz>
 Combien de lettres contient l'API (2019)?
@@ -151,6 +172,7 @@ Combien de lettres contient l'API (2019)?
 -87
 -*107
 -123
+=L'Alphabet Phonétique International compte 107 lettres de base, plus des diacritiques et des symboles supplémentaires.
 
 <quiz>
 Laquelle de ces voyelles n'est pas antérieure?
@@ -158,6 +180,7 @@ Laquelle de ces voyelles n'est pas antérieure?
 -*ɘ
 -i
 -ø
+=La voyelle [ɘ] est une voyelle centrale, tandis que les autres sont des voyelles antérieures.
 
 <quiz>
 Lesquelles de ces voyelles ne fait pas partie de voyelles non arrondies?
@@ -165,6 +188,7 @@ Lesquelles de ces voyelles ne fait pas partie de voyelles non arrondies?
 -ɘ
 -i
 -*œ
+=La voyelle [œ] est une voyelle arrondie, tandis que les autres sont des voyelles non arrondies.
 
 <quiz>
 Laquelle des langues suivante n'est pas une langue à clics?
@@ -172,6 +196,7 @@ Laquelle des langues suivante n'est pas une langue à clics?
 -Taa (langue khoïsan)
 -*Lingala (langue bantoue)
 -Zulu (langue bantoue)
+=Le lingala est une langue bantoue qui n'utilise pas de clics, contrairement au zulu qui en a emprunté.
 
 <quiz>
 Laquelle des langues suivantes ne fait pas partie de la famille austronésienne?
@@ -179,6 +204,7 @@ Laquelle des langues suivantes ne fait pas partie de la famille austronésienne?
 -Javanais
 -Tagalog
 -*Tupi
+=Le tupi est une langue tupi-guarani parlée au Brésil, tandis que les autres sont des langues austronésiennes.
 
 <quiz>
 Dans quelle langue il y a des traces écrites qui datent de 2900 av. J-C.?
@@ -186,6 +212,7 @@ Dans quelle langue il y a des traces écrites qui datent de 2900 av. J-C.?
 -Égyptien ancien
 -Hittite
 -*Sumérien
+=Les plus anciennes traces écrites sumériennes datent d'environ 2900 av. J.-C., utilisant l'écriture cunéiforme.
 
 <quiz>
 Lesquelles parmi les langues suivantes sont les deux les plus anciennes encore utilisées aujourd'hui?
@@ -193,6 +220,7 @@ Lesquelles parmi les langues suivantes sont les deux les plus anciennes encore u
 -Lituanien et Russe
 -Persan et Grec
 -*Tamoul et Sanskrit
+=Le tamoul et le sanskrit sont parmi les plus anciennes langues encore en usage, avec des traditions littéraires continues.
 
 <quiz>
 Laquelle parmi les langues suivantes utilise la conjugaison verbale pour indiquer le temps?
@@ -200,6 +228,7 @@ Laquelle parmi les langues suivantes utilise la conjugaison verbale pour indique
 -Malais
 -Thaï
 -Vietmanien
+=L'atikamekw utilise la conjugaison verbale pour exprimer le temps, contrairement aux autres langues qui utilisent des particules.
 
 <quiz>
 À quelle famille linguistique appartient la langue ouïgour?
@@ -207,6 +236,7 @@ Laquelle parmi les langues suivantes utilise la conjugaison verbale pour indique
 -Austro-asiatique
 -Ouralienne
 -Sino-tibétaine
+=L'ouïgour fait partie de la famille des langues altaïques, plus précisément du groupe des langues turques.
 
 <quiz>
 Quelle langue parmi les suivantes n'appartient pas à la famille ouralienne?
@@ -214,5 +244,6 @@ Quelle langue parmi les suivantes n'appartient pas à la famille ouralienne?
 -Komi
 -Nenet
 -*Yakoute
+=Le yakoute est une langue turque, tandis que les autres sont des langues ouraliennes.
 
 

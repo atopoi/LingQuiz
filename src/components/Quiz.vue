@@ -35,7 +35,8 @@
       <div v-if="showFeedback" class="feedback">
         <p v-if="isCorrectAnswer(selectedAnswer)" class="success-message">Bravo!</p>
         <p v-else-if="attempts === 1" class="try-again-message">Try again!</p>
-        <p v-else class="explanation">{{ currentQuiz.explanation }}</p>
+        <p v-else class="incorrect-message">Incorrect!</p>
+        <p class="explanation">{{ currentQuiz.explanation }}</p>
         <div class="button-group">
           <button @click="resetQuiz" class="reset-button">Reset Quiz</button>
           <button @click="nextQuiz" class="next-button">Next</button>
@@ -452,24 +453,44 @@ h3 span {
 }
 
 .feedback {
-  margin-top: 0.8rem;
-  padding: 0.8rem;
-  background: #f8f9fa;
-  border-radius: 6px;
-  font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.success-message {
+  color: #4CAF50;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.try-again-message {
+  color: #f39c12;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.incorrect-message {
+  color: #e74c3c;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.explanation {
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  background-color: #f8f9fa;
+  border-left: 4px solid #4CAF50;
+  border-radius: 4px;
+  font-style: italic;
   color: #2c3e50;
-  border: 1px solid #e0e0e0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  max-width: 300px;
-  margin-left: auto;
-  margin-right: auto;
+  line-height: 1.4;
 }
 
 .button-group {
+  margin-top: 0.75rem;
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
   justify-content: center;
-  margin-top: 1rem;
 }
 
 .reset-button {
@@ -524,33 +545,6 @@ h3 span {
 .start-button:active, .next-button:active, .restart-button:active {
   transform: translateY(0);
   box-shadow: 0 1px 2px rgba(66, 185, 131, 0.2);
-}
-
-.success-message {
-  color: #4caf50;
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-.try-again-message {
-  color: #ff9800;
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 @media (max-width: 480px) {

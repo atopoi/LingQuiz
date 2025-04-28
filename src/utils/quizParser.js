@@ -39,7 +39,10 @@ export function parseQuizFile(content) {
         currentQuiz.options.push(option)
       }
       // console.log('Current quiz options:', currentQuiz.options)
-    } else if (line && !line.startsWith('-') && currentQuiz) {
+    } else if (line.startsWith('=')) {
+      // Handle explanation line
+      currentQuiz.explanation = line.substring(1).trim()
+    } else if (line && currentQuiz) {
       if (!currentQuiz.question) {
         // console.log('Found question:', line)
         currentQuiz.question = line
