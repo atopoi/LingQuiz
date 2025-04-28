@@ -1,6 +1,5 @@
 <quiz>
 Combien de cas y a-t-il en géorgien?
-<choices>
 -5
 -*7
 -8
@@ -8,7 +7,6 @@ Combien de cas y a-t-il en géorgien?
 
 <quiz>
 Quelle langue n’est pas dravidienne?
-<choices>
 -Brahui
 -Malayalam
 -*Marathi
@@ -16,21 +14,10 @@ Quelle langue n’est pas dravidienne?
 
 <quiz>
 À quelle famille linguistique appartiennent le cri, l’ojibwa et l’abénaki?
-<choices>
 -*Algonquienne
 -Athabascane
 -Inuite
 -Iroquoienne
-
-
-<quiz>
-Laquelle des personnes suivantes n’est pas connue pour sa contribution à l’étude des langues indo-européennes?
-<choices>
--August Schleicher
--*Franz Boas
--Jakob Grimm
--Rasmus Rask
-
 
 <quiz>
 Quel élément n'est pas caractéristique des langues nigéro-congolaises?
@@ -39,6 +26,12 @@ Quel élément n'est pas caractéristique des langues nigéro-congolaises?
 -*Système de genre
 -Système tonal
 
+<quiz>
+Laquelle des personnes suivantes n’est pas connue pour sa contribution à l’étude des langues indo-européennes?
+-August Schleicher
+-*Franz Boas
+-Jakob Grimm
+-Rasmus Rask
 
 <quiz>
 Quel mot veut dire "femme" en kanyen'kéha?
