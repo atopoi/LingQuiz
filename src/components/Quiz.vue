@@ -50,8 +50,8 @@
         <span class="score-box"><span class="score-label">POINTS</span> <span class="score-number">{{ points }}</span><span class="divider">/</span><span class="score-number">{{ completedQuizzes * 2 }}</span></span>
       </div>
       <div class="feedback-message" :class="feedbackClass">
-        <p v-if="pointRate > 0.9" class="excellent">You are a real linguist! 🍾🎉</p>
-        <p v-else-if="pointRate >= 0.75" class="good">Not bad! 👍</p>
+        <p v-if="pointRate > 0.85" class="excellent">You are a real linguist! 🍾🎉</p>
+        <p v-else-if="pointRate >= 0.70" class="good">Not bad! 👍</p>
         <p v-else class="needs-improvement">Sorry, you need a linguistics course! Ask Houman :) 📚</p>
       </div>
       <button @click="restartQuiz" class="restart-button">Try Again</button>
