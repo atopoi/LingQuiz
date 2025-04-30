@@ -36,7 +36,7 @@ Laquelle des personnes suivantes n'est pas connue pour sa contribution à l'étu
 -*Franz Boas
 -Jakob Grimm
 -Rasmus Rask
-=Franz Boas est connu pour ses travaux en anthropologie et linguistique amérindienne, pas pour l'étude des langues indo-européennes.
+=Franz Boas est connu pour ses travaux sur les cultures et langues autochtones en Amérique du Nord, pas pour l'étude des langues indo-européennes.
 
 <quiz>
 Quel mot veut dire "femme" en kanyen'kéha?
@@ -52,7 +52,7 @@ Que veut dire "Skennen'kó:wa ken?" "Henh, Skennen'kó:wa. Nok ní:se?"
 -*"Est-ce que ça va?" "Oui, ça va bien, et toi?"
 - "C'est une belle journée" "Oui, en effet, n'est-ce pas?"
 - "Est-ce ta mère?" "Oui, c'est ma mère. Et où est la tienne?"
-="Skennen'kó:wa" est une salutation mohawk qui signifie littéralement "la paix est avec toi".
+="Skennen'kó:wa" est une salutation mohawk qui signifie littéralement "la grande paix".
 
 <quiz>
 Dans quel pays il y a moins de 500 langues parlées?
@@ -140,7 +140,7 @@ Quelle langue parmi les suivantes n'est pas une langue isolante?
 -*Austronésienne
 -Khoïsane
 -Nigéro-congolaise
-=Le malgache est l’une des environ 1200 langues austronésiennes.
+=Le malgache est l’une des langues austronésiennes qui en compte environ 1200.
 
 <quiz>
 La loi de Grimm explique l'évolution des consonnes du proto-indo-européen au germanique. Quelle transformation n'en fait pas partie?
@@ -172,7 +172,7 @@ Combien de lettres contient l'API (2019)?
 -87
 -*107
 -123
-=L'Alphabet Phonétique International compte 107 lettres de base, plus des diacritiques et des symboles supplémentaires.
+=L'Alphabet phonétique international compte 107 lettres de base, plus des diacritiques et des symboles supplémentaires.
 
 <quiz>
 Laquelle de ces voyelles n'est pas antérieure?
@@ -183,7 +183,7 @@ Laquelle de ces voyelles n'est pas antérieure?
 =La voyelle [ɘ] est une voyelle centrale, tandis que les autres sont des voyelles antérieures.
 
 <quiz>
-Lesquelles de ces voyelles ne fait pas partie de voyelles non arrondies?
+Laquelle de ces voyelles est une voyelle arrondie?
 -ɑ
 -ɘ
 -i
@@ -192,7 +192,7 @@ Lesquelles de ces voyelles ne fait pas partie de voyelles non arrondies?
 
 <quiz>
 Laquelle des langues suivante n'est pas une langue à clics?
--Nama (Langue khoïsan)
+-Nama (langue khoïsan)
 -Taa (langue khoïsan)
 -*Lingala (langue bantoue)
 -Zulu (langue bantoue)
@@ -216,10 +216,10 @@ Dans quelle langue il y a des traces écrites qui datent de 2900 av. J-C.?
 
 <quiz>
 Lesquelles parmi les langues suivantes sont les deux les plus anciennes encore utilisées aujourd'hui?
--Arabe et Hébreu
--Lituanien et Russe
--Persan et Grec
--*Tamoul et Sanskrit
+-Arabe et hébreu
+-Lituanien et russe
+-Persan et grec
+-*Tamoul et sanskrit
 =Le tamoul et le sanskrit sont parmi les plus anciennes langues encore en usage, avec des traditions littéraires continues.
 
 <quiz>
